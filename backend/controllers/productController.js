@@ -81,11 +81,17 @@ const createProduct = async (req, res, next) => {
     let mainImage = '';
     let additionalImages = [];
 
+    // if (req.files?.mainImage?.[0]) {
+    //   mainImage = req.files.mainImage[0].filename;
+    // }
+    // if (req.files?.additionalImages) {
+    //   additionalImages = req.files.additionalImages.map(f => f.filename);
+    // }
     if (req.files?.mainImage?.[0]) {
-      mainImage = req.files.mainImage[0].filename;
+      mainImage = req.files.mainImage[0].path
     }
     if (req.files?.additionalImages) {
-      additionalImages = req.files.additionalImages.map(f => f.filename);
+      additionalImages = req.files.additionalImages.map(f => f.path)
     }
 
     const tagsArray = tags ? (Array.isArray(tags) ? tags : JSON.parse(tags)) : [];
@@ -127,7 +133,8 @@ const updateProduct = async (req, res, next) => {
         const oldPath = path.join(__dirname, '../uploads', product.mainImage);
         if (fs.existsSync(oldPath)) fs.unlinkSync(oldPath);
       }
-      product.mainImage = req.files.mainImage[0].filename;
+      // product.mainImage = req.files.mainImage[0].filename;
+      product.mainImage = req.files.mainImage[0].path
     }
 
     // Agregar imágenes adicionales
