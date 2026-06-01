@@ -95,8 +95,9 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Momentos Divertidos – Postres y Regalos Dulces</title>
-        <meta name="description" content="Postres artesanales premium en Moquegua. Tortas, chocolates, brownies y regalos dulces." />
+        <title>Momentos Divertidos – Pastelería, Postres y Regalos Dulces en Moquegua</title>
+        <meta name="description" content="Pastelería artesanal en Moquegua. Tortas, brownies, bocaditos dulces y salados, alfajores, chocolates, desayunos sorpresa y regalos especiales con delivery por WhatsApp." />
+        <meta name="keywords" content="pastelería Moquegua, postres Moquegua, tortas Moquegua, brownies Moquegua, bocaditos Moquegua, regalos dulces Moquegua, desayunos sorpresa Moquegua, detalles Moquegua" />
       </Helmet>
 
       {/* ── HERO ── */}

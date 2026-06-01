@@ -1,3 +1,8 @@
+import {
+  RiDashboardLine, RiStore2Line, RiShoppingBag3Line,
+  RiSettings3Line, RiLogoutBoxLine, RiMenuLine, RiMegaphoneLine,
+  RiArrowRightSLine, RiCloseLine, RiStoreLine  // ← agrega RiStoreLine
+} from 'react-icons/ri'
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -38,11 +43,11 @@ function SidebarContent({ onClose }) {
     <div className="flex flex-col h-full" style={{ background: A.sidebar }}>
       {/* Logo */}
       <div className="px-5 py-5 flex items-center justify-between" style={{ borderBottom:`1px solid ${A.border}` }}>
-        <div className="flex items-center gap-3">
+        <Link to="/"  className="flex items-center gap-3">
           <img src="/logo.png" alt="" className="w-10 h-10 object-contain"
             style={{ opacity:0.85 }}
             onError={e => e.target.style.display='none'} />
-          <div>
+          </Link>
             <p className="font-cormorant font-bold leading-none" style={{ color:A.text, fontSize:'17px' }}>Momentos</p>
             <p className="font-poppins text-[10px] tracking-[0.22em] uppercase mt-0.5" style={{ color:`${A.gold}88` }}>
               Admin Panel
@@ -87,6 +92,13 @@ function SidebarContent({ onClose }) {
           )
         })}
       </nav>
+      {/* Botón Ver tienda — pega ANTES del botón logout */}
+        <Link to="/"
+          className="flex items-center gap-3 px-4 py-3 rounded-xl font-poppins text-sm font-medium w-full transition-all duration-200"
+          style={{ color:'rgba(201,150,58,0.65)', background:'rgba(201,150,58,0.06)', border:'1px solid rgba(201,150,58,0.14)' }}>
+          <RiStoreLine size={18} />
+          Ver tienda
+        </Link>
 
       {/* Logout */}
       <div className="p-3" style={{ borderTop:`1px solid ${A.border}` }}>
