@@ -1,15 +1,10 @@
-import {
-  RiDashboardLine, RiStore2Line, RiShoppingBag3Line,
-  RiSettings3Line, RiLogoutBoxLine, RiMenuLine, RiMegaphoneLine,
-  RiArrowRightSLine, RiCloseLine, RiStoreLine  // ← agrega RiStoreLine
-} from 'react-icons/ri'
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   RiDashboardLine, RiStore2Line, RiShoppingBag3Line,
   RiSettings3Line, RiLogoutBoxLine, RiMenuLine, RiMegaphoneLine,
-  RiArrowRightSLine, RiCloseLine
+  RiArrowRightSLine, RiCloseLine, RiStoreLin
 } from 'react-icons/ri'
 import { useAuth } from '../contexts/AuthContext'
 
@@ -41,26 +36,26 @@ function SidebarContent({ onClose }) {
 
   return (
     <div className="flex flex-col h-full" style={{ background: A.sidebar }}>
-      {/* Logo */}
-      <div className="px-5 py-5 flex items-center justify-between" style={{ borderBottom:`1px solid ${A.border}` }}>
-        <Link to="/"  className="flex items-center gap-3">
-          <img src="/logo.png" alt="" className="w-10 h-10 object-contain"
-            style={{ opacity:0.85 }}
-            onError={e => e.target.style.display='none'} />
-          </Link>
-            <p className="font-cormorant font-bold leading-none" style={{ color:A.text, fontSize:'17px' }}>Momentos</p>
-            <p className="font-poppins text-[10px] tracking-[0.22em] uppercase mt-0.5" style={{ color:`${A.gold}88` }}>
-              Admin Panel
-            </p>
-          </div>
-        </div>
-        {onClose && (
-          <button onClick={onClose} className="lg:hidden p-1.5 rounded-lg"
-            style={{ color:A.muted }}>
-            <RiCloseLine size={18} />
-          </button>
-        )}
+  {/* Logo */}
+  <div className="px-5 py-5 flex items-center justify-between" style={{ borderBottom:`1px solid ${A.border}` }}>
+    <Link to="/" className="flex items-center gap-3">
+      <img src="/logo.png" alt="" className="w-10 h-10 object-contain"
+        style={{ opacity:0.85 }}
+        onError={e => e.target.style.display='none'} />
+      <div>
+        <p className="font-cormorant font-bold leading-none" style={{ color:A.text, fontSize:'17px' }}>Momentos</p>
+        <p className="font-poppins text-[10px] tracking-[0.22em] uppercase mt-0.5" style={{ color:`${A.gold}88` }}>
+          Admin Panel
+        </p>
       </div>
+    </Link>
+    {onClose && (
+      <button onClick={onClose} className="lg:hidden p-1.5 rounded-lg"
+        style={{ color:A.muted }}>
+        <RiCloseLine size={18} />
+      </button>
+    )}
+  </div>
 
       {/* User */}
       <div className="px-4 py-3" style={{ borderBottom:`1px solid ${A.border}` }}>
