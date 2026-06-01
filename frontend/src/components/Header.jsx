@@ -42,7 +42,7 @@ export default function Header() {
           <div style={{display:'none'}} className="items-center">
             <span className="font-cormorant font-bold text-2xl" style={{color:'#C9963A'}}>MD</span>
           </div>
-          <div className="hidden sm:block">
+          <div className="block">
             <p className="font-cormorant font-bold text-xl leading-none tracking-wide" style={{color:'#F5EDD6'}}>Momentos Divertidos</p>
             <p className="font-poppins text-[10px] tracking-[0.22em] uppercase mt-0.5" style={{color:'rgba(201,150,58,0.75)'}}>Postres & Regalos Dulces</p>
           </div>
