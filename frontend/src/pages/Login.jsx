@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useNavigate, Navigate } from 'react-router-dom'
+import { useNavigate, Navigate, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import { RiLockLine, RiMailLine, RiEyeLine, RiEyeOffLine } from 'react-icons/ri'
+import { RiLockLine, RiMailLine, RiEyeLine, RiEyeOffLine, RiArrowLeftLine, RiStoreLine } from 'react-icons/ri'
 import { useAuth } from '../contexts/AuthContext'
 import toast from 'react-hot-toast'
 
@@ -29,11 +29,25 @@ export default function Login() {
     }
   }
 
+
+
   return (
     <>
       <Helmet><title>Administración – Momentos Divertidos</title></Helmet>
 
       <div className="min-h-screen bg-choco flex items-center justify-center px-4 relative overflow-hidden">
+      {/* Botón volver a tienda — arriba izquierda */}
+        <Link to="/"
+          className="absolute top-6 left-6 flex items-center gap-2 font-poppins text-sm font-medium px-4 py-2.5 rounded-full z-10"
+          style={{
+            background:'rgba(245,237,214,0.06)',
+            border:'1px solid rgba(245,237,214,0.12)',
+            color:'rgba(245,237,214,0.55)',
+          }}>
+          <RiArrowLeftLine size={15} />
+          Volver a la tienda
+        </Link>
+
         {/* Fondo decorativo */}
         <div className="absolute inset-0">
           <img
@@ -121,9 +135,20 @@ export default function Login() {
               </button>
             </form>
 
-            <p className="font-poppins text-xs text-choco/30 text-center mt-6">
+            <p className="font-poppins text-xs text-center mt-6" style={{ color:'rgba(245,237,214,0.30)' }}>
               Solo acceso autorizado
             </p>
+
+            <div className="mt-4 pt-4" style={{ borderTop:'1px solid rgba(245,237,214,0.06)' }}>
+              <Link to="/"
+                className="flex items-center justify-center gap-2 font-poppins text-sm transition-colors duration-200"
+                style={{ color:'rgba(245,237,214,0.28)' }}
+                onMouseEnter={e => e.currentTarget.style.color='rgba(201,150,58,0.75)'}
+                onMouseLeave={e => e.currentTarget.style.color='rgba(245,237,214,0.28)'}>
+                <RiStoreLine size={15} />
+                Volver a la tienda
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>
