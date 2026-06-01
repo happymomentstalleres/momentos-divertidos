@@ -139,12 +139,12 @@ export default function Login() {
               Solo acceso autorizado
             </p>
 
-            <div className="mt-4 pt-4" style={{ borderTop:'1px solid rgba(245,237,214,0.06)' }}>
+            <div className="mt-4 pt-4" style={{ borderTop:'1px solid rgba(0, 0, 0, 0.06)' }}>
               <Link to="/"
                 className="flex items-center justify-center gap-2 font-poppins text-sm transition-colors duration-200"
                 style={{ color:'rgba(0, 0, 0, 0.28)' }}
                 onMouseEnter={e => e.currentTarget.style.color='rgba(201,150,58,0.75)'}
-                onMouseLeave={e => e.currentTarget.style.color='rgba(245,237,214,0.28)'}>
+                onMouseLeave={e => e.currentTarget.style.color='rgba(0, 0, 0, 0.28)'}>
                 <RiStoreLine size={15} />
                 Volver a la tienda
               </Link>
